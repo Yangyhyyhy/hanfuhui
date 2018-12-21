@@ -3,8 +3,8 @@
 		<!--导航-->
 		<div class="nav">
 			<mt-button size="small" class="mui-icon-extra mui-icon-extra-gift"></mt-button>
-			<mt-button size="small" @click.native.prevent="active = 'tab-container1'">推荐摄影</mt-button>
-			<mt-button size="small" @click.native.prevent="active = 'tab-container2'">汉服活动</mt-button>
+			<mt-button size="small" @click.native.prevent="active = 'tab-container1'" :style="actobj">推荐摄影</mt-button>
+			<mt-button size="small" @click.native.prevent="active = 'tab-container2'" :style="actobj2">汉服活动</mt-button>
 			<mt-button size="small" class="mui-icon mui-icon-search"></mt-button>
 		</div>
 		<!--导航结束-->
@@ -108,6 +108,12 @@
 				active: 'tab-container1',
 				imagelist: [],
 				sylist:[],
+				actobj:{
+					color:"yellow"
+				},
+				actobj2:{
+					color:"white"
+				}
 			};
 		},
 		methods: {
@@ -127,6 +133,15 @@
 		created() {
 			this.getImageList();
 			this.getSYlist();
+		},
+		updated(){
+			if(this.active=='tab-container1'){
+				this.actobj.color="yellow"
+				this.actobj2.color="white"
+			}else{
+				this.actobj2.color="yellow"
+				this.actobj.color="white"
+			}
 		},
 		components: {
 			"swiper-box": swiper
