@@ -45,7 +45,7 @@
 				var u = this.unameval;
 				var p = this.upwdval;
 				var pa=this.pasdwal
-				this.$http.get("login?uname=" + u + "&upwd=" + p).then(result => { //10:35
+				this.$http.get("login?uname=" + u + "&upwd=" + p).then(result => { 
 					if(result.body.code == 1) {
 						Toast(result.body.msg);
 						this.$router.push("/home");

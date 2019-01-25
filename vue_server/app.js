@@ -7,7 +7,7 @@ var app = express();
 //服务器node.js 允许跨域访问配置项
 //2.1:引入跨域模块   
 const cors = require("cors");
-//2.2:配置允许哪个程序跨域访问 脚手架   11:16
+//2.2:配置允许哪个程序跨域访问 脚手架 
 app.use(cors({
   origin:[
     "http://127.0.0.1:3001","http://localhost:3001"],
@@ -97,7 +97,7 @@ app.get("/newsinfo",(req,res)=>{
 //用户发表评论
 const qs = require("querystring");
 app.post("/postcomment",(req,res)=>{
-   //为req对象绑定事件data   10:45
+   //为req对象绑定事件data  
    req.on("data",(buf)=>{
      var str = buf.toString();  //1:将参数转字符串
      var obj = JSON.parse(str); //2:将参数转对象
