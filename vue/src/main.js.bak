@@ -2,15 +2,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
-//引入mint-ui css
+//0:引入mint-ui css
 import'mint-ui/lib/style.css'
 Vue.config.productionTip = false
 
-//引入mui css文件 大部分组件都要使用css在 main.js引入
+//0:引入mui css文件 大部分组件都要使用css在 main.js引入
 import './lib/mui/css/mui.css'
 import './lib/mui/css/icons-extra.css'
 
-//引入组件mintui库Header
+//1:引入组件mintui库Header
 //-引入指定组件
 //import {Button,Header,Swipe,SwipeItem,Lazyload} from "mint-ui";//-注册当前项目中 <mt-header> 
 //Vue.component(Button.name,Button);
@@ -42,6 +42,8 @@ Vue.filter("dateFilter",function(val){
   d<10&&(d="0"+d);            //如果日小于10加前缀 0
   return `${y}-${m}-${d}`;   //拼接字符串
 });
+//练习:创建过滤器 年月日 时:分:秒
+//datetimeFilter   9:46
 //val 参数    {{日期字符串 | 过滤器}}
 //val 左右日期字符串 
 Vue.filter("datetimeFilter",function(val){
